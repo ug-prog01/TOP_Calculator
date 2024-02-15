@@ -1,0 +1,16 @@
+div .screen-wrapper {
+	text-align: center;
+}
+
+div .row {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+div .c-button {
+	width: 5%;
+	text-align: center;
+	padding: 5vh;
+}

@@ -35,6 +35,9 @@ operators.forEach((operator) => {
 		event.stopPropagation();
 		prevNumber = currentNumber;
 		currentNumber = [];
+		if (expressionOperator === undefined) {
+			console.log('oops');
+		}
 		expressionOperator = operator;
 		updateScreen(operator.innerText);
 	});
@@ -46,22 +49,22 @@ backspace.addEventListener("click", (event) => {
 	updateScreen(currentNumber.join(''));
 });
 
-evaluate.addEventListener("click", (event) => {
-	event.stopPropagation();
+evaluate.addEventListener("click", () => {
 	let result = 0;
-	console.log(expressionOperator);
+	let num1 = parseInt(currentNumber.join(''));
+	let num2 = parseInt(prevNumber.join(''));
 	switch (expressionOperator.classList.value.split(" ")[expressionOperator.classList.length - 1]) {
 		case "add":
-			result = parseInt(currentNumber.join('')) + parseInt(prevNumber.join(''));
+			result = num2 + num1;
 			break;
 		case "subtract":
-			result = parseInt(currentNumber) - parseInt(prevNumber);
+			result = num2 - num1;
 			break;
 		case "multiply":
-			result = parseInt(currentNumber) * parseInt(prevNumber);
+			result = num2 * num1;
 			break;
 		case "divide":
-			result = parseInt(currentNumber) / parseInt(prevNumber);
+			result = num2 / num1;
 			break;
 	}
 	currentNumber = (result + "").split('');

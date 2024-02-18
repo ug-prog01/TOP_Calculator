@@ -1,5 +1,18 @@
+#container {
+	background-color: blue;
+	position: fixed;
+	align-self: center;
+	margin-left: 30%;
+	height: 60vh;
+	width: 40vw;
+	padding: 2%;
+}
+
 div .screen-wrapper {
-	text-align: center;
+	background-color: grey;
+	padding: 1px;
+	text-align: right;
+	padding-right: 5%;
 }
 
 div .row {
@@ -10,7 +23,14 @@ div .row {
 }
 
 div .c-button {
-	width: 5%;
+	font-size: larger;
+	width: 5rem;
 	text-align: center;
 	padding: 5vh;
+	margin: 1%;
+}
+
+div .c-button:hover {
+	background-color: black;
+	opacity: 50%;
 }
